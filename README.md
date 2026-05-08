@@ -8,23 +8,18 @@ A lightweight library for basic Neopixel effects and animations.
 
 ### Initialization
 
-* **void begin(uint8_t pin, uint16_t count)** Initializes the Neopixel strip on the specified pin with the given LED count.
-* **void begin(uint8_t pin, uint16_t count, uint8_t brightness)** Initializes with custom brightness (0-255).
+* **setupAnimSetting(Adafruit_NeoPixel& pixels)** Init of main classes for working of pixels:
+    - **begin()**
+    - **setBrightness(uint8_t)**
 
 ```cpp
-#include "UANIMA.h"
+#include "uanima.h"
 
-UANIMA strip(6, 30);  // pin 6, 30 LEDs
+
+#define DELAYVAL   50
 
 void setup() {
-    strip.begin();
-    strip.setBrightness(255);
-}
-
-void loop() {
-    strip.fill(0xFF0000);  // Red color
-    strip.show();
-    delay(500);
+    setupAnimSetting(pixels);
 }
 ```
 
@@ -32,21 +27,24 @@ void loop() {
 
 | Method | Description |
 |--------|-------------|
-| `void begin()` | Initializes the LED strip |
-| `void show()` | Display the current LED data |
-| `void fill(uint32_t color)` | Fill all LEDs with a single color |
-| `void setPixel(uint16_t index, uint32_t color)` | Set a single LED color |
-| `void setBrightness(uint8_t level)` | Set brightness (0-255) |
-| `void clear()` | Turn off all LEDs |
+| `void setupAnimSetting(Adafruit_NeoPixel& pixels)` | Initialize the main settings for init the neopixel leds |
+| `void colorWipe(Adafruit_NeoPixel& pixels,uint32_t color, int wait)` | Display sequence of a specific colors per row |
+| `void theaterChase(Adafruit_NeoPixel& pixels,uint32_t color, int wait)` | Display a cascade of light effects|
+| `void quetzalcoatlEffect(Adafruit_NeoPixel& pixels,int wait);` | Display a effect of snake simulating quetzalcoatl|
+| `uint32_t Wheel(Adafruit_NeoPixel& pixels,byte WheelPos);` | Display a effect of wheel|
+| `void rainbowCycle(Adafruit_NeoPixel& pixels,int wait);` | Display a effect of rainbow in cycle|
+| `void confetti(Adafruit_NeoPixel& pixels,int wait);` | Display a confetti effect |
+| `void scanner(Adafruit_NeoPixel& pixels,uint32_t color, int wait);` | Display a scanner effect|
+| `void fadeInOut(Adafruit_NeoPixel& pixels,uint32_t color);` | Display a simple fade effect|
 
 ## Color Format
 
-Colors are defined in hex format: `0xRRGGBB`
+Colors are defined in  a representation of 8 bits in decimal format per color: `0 - 255`
 
-* Red: `0xFF0000`
-* Green: `0x00FF00`
-* Blue: `0x0000FF`
-* White: `0xFFFFFF`
+* Red: `0 - 255, 0, 0`
+* Green: `0, 0 - 255, 0`
+* Blue: `0, 0, 0 - 255`
+* White: `255,255,255`
 
 ## License
 
