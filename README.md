@@ -1,48 +1,52 @@
-# UBMA250 library
+# UANIMA Neopixel Library
 
-Arduino library for the **Bosch BMA250 Accelerometer**, maintained by [Unit Electronics](https://www.uelectronics.com/).
+Arduino library for **Addressable RGB LEDs (Neopixels)**, created by **Jonathan Mejorado López**.
 
-## UBMA250 Class
+A lightweight library for basic Neopixel effects and animations.
+
+## UANIMA Class
 
 ### Initialization
 
-* **int begin(uint8_t range, uint8_t bandwidth)** Legacy I2C initialization (backward compatible). Input the *range* (±2/±4/±8/±16g) and low-pass filter *bandwidth*.
-* **int beginI2C(uint8_t range, uint8_t bandwidth, uint8_t i2c_addr = 0x18)** I2C initialization with optional custom address.
-* **int beginSPI(uint8_t range, uint8_t bandwidth, uint8_t cs_pin, SPIClass\* spi = &SPI)** SPI initialization with chip-select pin and optional SPI instance.
+* **void begin(uint8_t pin, uint16_t count)** Initializes the Neopixel strip on the specified pin with the given LED count.
+* **void begin(uint8_t pin, uint16_t count, uint8_t brightness)** Initializes with custom brightness (0-255).
 
 ```cpp
-#include "BMA250.h"
+#include "UANIMA.h"
 
-UBMA250 accel;
+UANIMA strip(6, 30);  // pin 6, 30 LEDs
 
 void setup() {
-    accel.beginI2C(BMA250_range_2g, BMA250_update_time_64ms);
+    strip.begin();
+    strip.setBrightness(255);
 }
 
 void loop() {
-    accel.read();
-    Serial.println(accel.X);
+    strip.fill(0xFF0000);  // Red color
+    strip.show();
+    delay(500);
 }
 ```
 
-### Public Variables
+### Public Methods
 
-| Variable | Type | Description |
-|----------|------|-------------|
-| `X` | int16_t | X-axis acceleration |
-| `Y` | int16_t | Y-axis acceleration |
-| `Z` | int16_t | Z-axis acceleration |
-| `tempC` | int8_t | Temperature in degrees Celsius |
-| `rawTemp` | int8_t | Raw temperature register value |
-| `I2Caddress` | uint8_t | Detected I2C address |
+| Method | Description |
+|--------|-------------|
+| `void begin()` | Initializes the LED strip |
+| `void show()` | Display the current LED data |
+| `void fill(uint32_t color)` | Fill all LEDs with a single color |
+| `void setPixel(uint16_t index, uint32_t color)` | Set a single LED color |
+| `void setBrightness(uint8_t level)` | Set brightness (0-255) |
+| `void clear()` | Turn off all LEDs |
 
-## Range Constants
+## Color Format
 
-`BMA250_range_2g`, `BMA250_range_4g`, `BMA250_range_8g`, `BMA250_range_16g`
+Colors are defined in hex format: `0xRRGGBB`
 
-## Bandwidth Constants
-
-`BMA250_update_time_64ms`, `BMA250_update_time_32ms`, `BMA250_update_time_16ms`, `BMA250_update_time_8ms`, `BMA250_update_time_4ms`, `BMA250_update_time_2ms`, `BMA250_update_time_1ms`, `BMA250_update_time_05ms`
+* Red: `0xFF0000`
+* Green: `0x00FF00`
+* Blue: `0x0000FF`
+* White: `0xFFFFFF`
 
 ## License
 
