@@ -1,6 +1,6 @@
 # UANIMA Neopixel Library
 
-Arduino library for **Addressable RGB LEDs (Neopixels)**, created by **Jonathan Mejorado López**.
+Arduino library for **Addressable RGB LEDs (Neopixels)**, created by **Jonathan Mejorado Lopez**.
 
 A lightweight library for basic Neopixel effects and animations.
 
