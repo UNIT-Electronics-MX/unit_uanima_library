@@ -1,28 +1,32 @@
 #######################################
-# Syntax Coloring Map for UBMA250
+# Syntax Coloring Map for UANIMA
 #######################################
 
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
 
-UBMA250	KEYWORD1
+pixels	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
-begin	KEYWORD2
-beginI2C	KEYWORD2
-beginSPI	KEYWORD2
-read	KEYWORD2
+setupAnimSetting	KEYWORD2
+colorWipe	KEYWORD2
+theaterChase	KEYWORD2
+quetzalcoatlEffect	KEYWORD2
+Wheel   KEYWORD2
+rainbowCycle    KEYWORD2
+scanner KEYWORD2
+confetti    KEYWORD2
+fadeInOut KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
 #######################################
 
-X	LITERAL1
-Y	LITERAL1
-Z	LITERAL1
-tempC	LITERAL1
-rawTemp	LITERAL1
+PIN	LITERAL1
+NUMPIXELS	LITERAL1
+
+
