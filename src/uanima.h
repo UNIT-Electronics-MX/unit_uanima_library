@@ -5,14 +5,6 @@
 
 #include <Adafruit_NeoPixel.h>
 
-#define PIN        8
-#define NUMPIXELS 25
-
-
-// animations.h
-extern Adafruit_NeoPixel pixels;
-
-
 void setupAnimSetting(Adafruit_NeoPixel& pixels);
 
 void colorWipe(Adafruit_NeoPixel& pixels,uint32_t color, int wait);

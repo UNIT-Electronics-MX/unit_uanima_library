@@ -1,50 +1,71 @@
 # UANIMA Neopixel Library
 
-Arduino library for **Addressable RGB LEDs (Neopixels)**, created by **Jonathan Mejorado Lopez**.
+Arduino library for **Addressable RGB LEDs (Neopixels)**, created by **Jonathan Mejorado López** and **Cesar Bautista**.
 
-A lightweight library for basic Neopixel effects and animations.
+A lightweight library for Neopixel effects and animations using the Adafruit_NeoPixel library.
 
-## UANIMA Class
+## Installation
 
-### Initialization
+1. Download the library from GitHub
+2. Place in your Arduino `libraries` folder
+3. Restart the Arduino IDE
+4. Include the library: `#include "uanima.h"`
 
-* **setupAnimSetting(Adafruit_NeoPixel& pixels)** Init of main classes for working of pixels:
-    - **begin()**
-    - **setBrightness(uint8_t)**
+## Configuration
+
+Define your PIN and number of LEDs, then create the `unStrip` object:
 
 ```cpp
 #include "uanima.h"
 
+#define PIN 8           // GPIO pin connected to Neopixels
+#define NUMPIXELS 25    // Number of LEDs in your strip
 
-#define DELAYVAL   50
-
-void setup() {
-    setupAnimSetting(pixels);
-}
+// Create the Neopixel strip object
+Adafruit_NeoPixel unStrip(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 ```
 
-### Public Methods
+### Neopixel Type
 
-| Method | Description |
-|--------|-------------|
-| `void setupAnimSetting(Adafruit_NeoPixel& pixels)` | Initialize the main settings for init the neopixel leds |
-| `void colorWipe(Adafruit_NeoPixel& pixels,uint32_t color, int wait)` | Display sequence of a specific colors per row |
-| `void theaterChase(Adafruit_NeoPixel& pixels,uint32_t color, int wait)` | Display a cascade of light effects|
-| `void quetzalcoatlEffect(Adafruit_NeoPixel& pixels,int wait);` | Display a effect of snake simulating quetzalcoatl|
-| `uint32_t Wheel(Adafruit_NeoPixel& pixels,byte WheelPos);` | Display a effect of wheel|
-| `void rainbowCycle(Adafruit_NeoPixel& pixels,int wait);` | Display a effect of rainbow in cycle|
-| `void confetti(Adafruit_NeoPixel& pixels,int wait);` | Display a confetti effect |
-| `void scanner(Adafruit_NeoPixel& pixels,uint32_t color, int wait);` | Display a scanner effect|
-| `void fadeInOut(Adafruit_NeoPixel& pixels,uint32_t color);` | Display a simple fade effect|
+The library uses: `NEO_GRB + NEO_KHZ800` (GRB color order, 800 kHz frequency)
 
-## Color Format
+## Available Functions
 
-Colors are defined in  a representation of 8 bits in decimal format per color: `0 - 255`
+- **setupAnimSetting()** - Initialize the Neopixel strip
+- **colorWipe()** - Color wipe animation
+- **theaterChase()** - Theater chase animation
+- **quetzalcoatlEffect()** - Aztec-themed animation effect
+- **rainbowCycle()** - Rainbow cycling animation
+- **scanner()** - Scanning light effect
+- **confetti()** - Confetti animation
+- **fadeInOut()** - Fade in and out effect
 
-* Red: `0 - 255, 0, 0`
-* Green: `0, 0 - 255, 0`
-* Blue: `0, 0, 0 - 255`
-* White: `255,255,255`
+## Example Usage
+
+```cpp
+#include "uanima.h"
+
+#define PIN 8           // GPIO pin connected to Neopixels
+#define NUMPIXELS 25    // Number of LEDs
+
+// Create the Neopixel strip object
+Adafruit_NeoPixel unStrip(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
+#define DELAYVAL 50
+
+void setup() {
+    setupAnimSetting(unStrip);  // Initialize with brightness 64
+}
+
+void loop() {
+    colorWipe(unStrip, unStrip.Color(255, 0, 0), DELAYVAL);  // Red wipe
+    delay(500);
+    
+    unStrip.clear();
+    unStrip.show();
+    delay(1000);
+}
+```
 
 ## License
 

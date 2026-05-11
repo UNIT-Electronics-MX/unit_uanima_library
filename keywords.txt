@@ -3,12 +3,6 @@
 #######################################
 
 #######################################
-# Datatypes (KEYWORD1)
-#######################################
-
-pixels	KEYWORD1
-
-#######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
@@ -21,12 +15,5 @@ rainbowCycle    KEYWORD2
 scanner KEYWORD2
 confetti    KEYWORD2
 fadeInOut KEYWORD2
-
-#######################################
-# Constants (LITERAL1)
-#######################################
-
-PIN	LITERAL1
-NUMPIXELS	LITERAL1
 
 
