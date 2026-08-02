@@ -7,6 +7,12 @@
 #######################################
 
 setupAnimSetting	KEYWORD2
+setBrightness	KEYWORD2
+getBrightness	KEYWORD2
+setPin	KEYWORD2
+setPixelColor	KEYWORD2
+getPixelColor	KEYWORD2
+fill	KEYWORD2
 colorWipe	KEYWORD2
 theaterChase	KEYWORD2
 quetzalcoatlEffect	KEYWORD2
@@ -15,5 +21,41 @@ rainbowCycle    KEYWORD2
 scanner KEYWORD2
 confetti    KEYWORD2
 fadeInOut KEYWORD2
+meteor	KEYWORD2
+twinkle	KEYWORD2
+fire	KEYWORD2
+breathe	KEYWORD2
+mexicanFlag	KEYWORD2
+heatColor	KEYWORD2
+setMatrixSize	KEYWORD2
+matrixWidth	KEYWORD2
+matrixHeight	KEYWORD2
+xy	KEYWORD2
+setPixelColorXY	KEYWORD2
+getPixelColorXY	KEYWORD2
+startColorWipe	KEYWORD2
+startTheaterChase	KEYWORD2
+startQuetzalcoatlEffect	KEYWORD2
+startRainbowCycle	KEYWORD2
+startScanner	KEYWORD2
+startConfetti	KEYWORD2
+startFadeInOut	KEYWORD2
+startMeteor	KEYWORD2
+startTwinkle	KEYWORD2
+startFire	KEYWORD2
+startBreathe	KEYWORD2
+startMexicanFlag	KEYWORD2
+update	KEYWORD2
+stop	KEYWORD2
+isRunning	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+MATRIX_ROW_MAJOR_PROGRESSIVE	LITERAL1
+MATRIX_ROW_MAJOR_SERPENTINE	LITERAL1
+MATRIX_COLUMN_MAJOR_PROGRESSIVE	LITERAL1
+MATRIX_COLUMN_MAJOR_SERPENTINE	LITERAL1
 
 
