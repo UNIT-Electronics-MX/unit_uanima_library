@@ -6,7 +6,7 @@ A library of ready-made effects and animations for Neopixel strips and matrices,
 
 ## Installation
 
-1. Download this library and Adafruit_NeoPixel (dependency)
+1. Download this library
 2. Place both in your Arduino `libraries` folder
 3. Restart the Arduino IDE
 4. Include the library: `#include "DevLab_UANIMA.h"`
