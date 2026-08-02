@@ -1,6 +1,6 @@
 # DevLab_UANIMA
 
-Arduino library for **Addressable RGB LEDs (Neopixels)**, created by **Jonathan Mejorado López** and **Cesar Bautista**.
+Arduino library for **Addressable RGB LEDs (Neopixels)**, created by **Jonathan Mejorado Lopez** and **Cesar Bautista**.
 
 A library of ready-made effects and animations for Neopixel strips and matrices, built on top of [Adafruit_NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel). Every effect is available both as a simple blocking call and as a `millis()`-based non-blocking call, and there's built-in support for 2D matrices (any wiring pattern) and pixel-level access for building your own custom effects.
 
