@@ -1,9 +1,15 @@
-// ==========================================
-// UANIMA Neopixel Library - Mexican Flag Example
-// ==========================================
-// Draws the Mexican flag (green / white / red vertical stripes) on a
-// 16x8 Neopixel matrix, "raising" it row by row from the bottom.
-//
+/***************************************************************
+ * @file    MexicanFlag.ino
+ * @author  Jonathan Mejorado Lopez
+ * @brief   Draws the Mexican flag on a 16x8 Neopixel matrix,
+ *          "raising" it row by row from the bottom.
+ *
+ * Wiring (Neopixel matrix)
+ * - Data -> 6
+ * - VCC  -> 5V (or 3V3 if your matrix supports it)
+ * - GND  -> GND
+ ***************************************************************/
+
 // This matrix is wired column-major, progressive: each column has 8
 // pixels wired bottom->top, and column N+1 starts again at the bottom
 // (not a serpentine/zigzag). If your matrix is wired differently, change

@@ -1,6 +1,17 @@
-// ==========================================
-// UANIMA Neopixel Library - All Effects Example
-// ==========================================
+/***************************************************************
+ * @file    AllEffects.ino
+ * @author  Jonathan Mejorado Lopez
+ * @brief   Runs through all 12 built-in UANIMA effects (color wipe,
+ *          theater chase, rainbow, scanner, confetti, fade, meteor,
+ *          twinkle, fire, breathe and Mexican flag), showing both
+ *          the blocking and non-blocking API where available, on a
+ *          128-pixel strip configured as a 16x8 matrix.
+ *
+ * Wiring (Neopixel strip)
+ * - Data -> 6
+ * - VCC  -> 5V (or 3V3 if your strip supports it)
+ * - GND  -> GND
+ ***************************************************************/
 
 #include "DevLab_UANIMA.h"
 

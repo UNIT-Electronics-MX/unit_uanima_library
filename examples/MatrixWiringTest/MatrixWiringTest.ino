@@ -1,13 +1,18 @@
-// ==========================================
-// UANIMA Neopixel Library - Matrix Wiring Test
-// ==========================================
-// Diagnostic sketch: lights ONE pixel at a time, in index order (0, 1, 2...),
-// slowly enough to watch. Use this to figure out how your matrix is wired
-// internally (the physical path the data line takes from pixel to pixel),
-// so animations that need real X/Y coordinates (like a flag) can be mapped
-// correctly.
-//
-// While this runs, watch the board and note:
+/***************************************************************
+ * @file    MatrixWiringTest.ino
+ * @author  Jonathan Mejorado Lopez
+ * @brief   Diagnostic sketch to figure out how a Neopixel matrix is
+ *          wired internally, so setMatrixSize() can be configured
+ *          correctly for animations that need real X/Y coordinates.
+ *
+ * Wiring (Neopixel matrix)
+ * - Data -> 6
+ * - VCC  -> 5V (or 3V3 if your matrix supports it)
+ * - GND  -> GND
+ ***************************************************************/
+
+// Lights ONE pixel at a time, in index order (0, 1, 2...), slowly enough
+// to watch. While this runs, watch the board and note:
 //   1. Does the first row (pixels 0-7) light up left-to-right or
 //      right-to-left?
 //   2. When pixel #8 lights up, is it directly BELOW pixel #0, or directly

@@ -1,8 +1,15 @@
-// ==========================================
-// UANIMA Neopixel Library - Brightness & Pixel Control Example
-// ==========================================
-// Demonstrates: setBrightness(), getBrightness(), setPixelColor(),
-// getPixelColor(), fill(), setPin(), Wheel() and heatColor()
+/***************************************************************
+ * @file    BrightnessAndPixelControl.ino
+ * @author  Jonathan Mejorado Lopez
+ * @brief   Demonstrates setBrightness(), getBrightness(),
+ *          setPixelColor(), getPixelColor(), fill(), setPin(),
+ *          Wheel() and heatColor() on a UANIMA Neopixel strip.
+ *
+ * Wiring (Neopixel strip)
+ * - Data -> 6
+ * - VCC  -> 5V (or 3V3 if your strip supports it)
+ * - GND  -> GND
+ ***************************************************************/
 
 #include "DevLab_UANIMA.h"
 

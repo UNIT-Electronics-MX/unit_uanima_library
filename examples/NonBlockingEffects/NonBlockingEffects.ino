@@ -1,10 +1,18 @@
-// ==========================================
-// UANIMA Neopixel Library - Non-blocking Effects Example
-// ==========================================
-// Demonstrates the millis()-based start*()/update() API. Effects advance
-// one frame at a time instead of blocking loop() with delay(), so the rest
-// of your sketch keeps running. To prove it, a "heartbeat" message prints
-// over Serial at a steady rate the whole time the strip is animating.
+/***************************************************************
+ * @file    NonBlockingEffects.ino
+ * @author  Jonathan Mejorado Lopez
+ * @brief   Demonstrates the millis()-based start*()/update() API,
+ *          cycling through all built-in effects without blocking
+ *          loop() with delay().
+ *
+ * Wiring (Neopixel strip)
+ * - Data -> 6
+ * - VCC  -> 5V (or 3V3 if your strip supports it)
+ * - GND  -> GND
+ ***************************************************************/
+
+// A "heartbeat" message prints over Serial at a steady rate the whole
+// time the strip is animating, to prove loop() is never blocked.
 //
 // NOTE: this example intentionally avoids driving any extra pin (like the
 // board's built-in LED) to prove non-blocking behavior. On many ESP32

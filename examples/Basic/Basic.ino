@@ -1,6 +1,14 @@
-// ==========================================
-// UANIMA Neopixel Library - Basic Example
-// ==========================================
+/***************************************************************
+ * @file    Basic.ino
+ * @author  Jonathan Mejorado Lopez
+ * @brief   Minimal bring-up for the UANIMA Neopixel strip: init +
+ *          red/green/blue colorWipe() sweep.
+ *
+ * Wiring (Neopixel strip)
+ * - Data -> 6
+ * - VCC  -> 5V (or 3V3 if your strip supports it)
+ * - GND  -> GND
+ ***************************************************************/
 
 #include "DevLab_UANIMA.h"
 
